@@ -7,8 +7,6 @@ notifications:
     recipients:
       - kcoewoys@outlook.com
 
-sudo: required
-
 addons:
   apt:
     packages:
@@ -22,10 +20,10 @@ services:
 before_install:
   - make
 
-before_script:
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-script:
-  - echo "Hello shellcode"
+    #before_script:
+    #- echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+    #script:
+    #- echo "Hello shellcode"
 
 
 after_success:
@@ -42,5 +40,5 @@ after_success:
   - mkdir -p coverage &&
   - kcov coverage hello.sh &&
   - bash <(curl -s https://codecov.io/bash) -t ee8ea59d-aa4e-4af1-955e-1c49f2b2f580
-  - docker build -t kcoewoys/shellcode:latest .
-  - docker push kcoewoys/shellcode:latest
+    #- docker build -t kcoewoys/shellcode:latest .
+    #- docker push kcoewoys/shellcode:latest
