@@ -1,0 +1,7 @@
+one.txt
+redirection.sh
+stderrout.txt
+stdinout.txt
+stdoutout.txt
+three.txt
+two.txt
