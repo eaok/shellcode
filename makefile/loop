@@ -1,0 +1,17 @@
+SOURCE:=a.c b.c
+
+all: testfor testforeach
+
+testfor:
+	@# LIST use variable
+	@#for循环不支持函数运算
+	@for var in $(SOURCE); do \
+		echo $$var; \
+		echo $(subst .c,.txt,$$var); \
+	done
+
+testforeach:
+	@$(foreach var,$(SOURCE),\
+		echo $(var); \
+		echo $(subst .c,.txt,$(var)); \
+	)
