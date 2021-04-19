@@ -2,9 +2,7 @@
 
 :<<EOF
 1. 遍历 for
-2. 流程控制 if else
-3. 流程控制 case esac
-4. 流程控制 while
+2. 流程控制 while
 
 EOF
 
@@ -20,35 +18,6 @@ for VAR in `ls ${dir}`; do
 done
 
 echo ${SUM}
-
-#if语句
-flag=0
-if [[ ${SUM} -eq 45 ]];
-then
-    flag=0
-    echo "Good Job"
-elif [[ ${SUM} -lt 45 ]];
-then
-    flag=-1
-    echo "Less Than"
-elif [[ ${SUM} -gt 45 ]];
-then
-    flag=1
-    echo "Greater Than"
-fi
-
-#case语句
-case ${flag} in
-    0)
-        echo "Good Job"
-    ;;
-    1)
-        echo "Greater Than"
-    ;;
-    -1)
-        echo "Less Than"
-    ;;
-esac
 
 #while循环
 while :
